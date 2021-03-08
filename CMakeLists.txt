@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 project(main)
 
-file(GLOB SOURCES Model/*.cpp util.cpp main.cpp)
+file(GLOB SOURCES util.cpp Model/*.cpp main.cpp)
 
 add_executable(main ${SOURCES})
 
