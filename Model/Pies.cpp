@@ -7,6 +7,7 @@
 #include <iostream>
 #include <stdexcept>
 
+#include "Czlowiek.h"
 #include "util.h"
 /**
  * Pies implementation
@@ -92,6 +93,11 @@ Pies::TypUszu Pies::getTypUszu() { return typUszu; }
  */
 Pies::DlugoscSiersci Pies::getDlugoscSiersci() { return dlugoscSiersci; }
 
-void Pies::podajLape() {}
+/**
+ * @param czlowiek
+ */
+void Pies::podajLape(Czlowiek czlowiek) {
+  std::cout << getImie() << " podaje lape " << czlowiek.getImie() << std::endl;
+}
 
 void Pies::aportuj() { std::cout << getImie() << " aportuje" << std::endl; }

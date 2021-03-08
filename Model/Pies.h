@@ -61,7 +61,10 @@ class Pies : public Ssak {
 
   DlugoscSiersci getDlugoscSiersci();
 
-  void podajLape();
+/**
+ * @param czlowiek
+ */
+void podajLape(Czlowiek czlowiek);
 
   void aportuj();
 
