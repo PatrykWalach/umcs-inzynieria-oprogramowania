@@ -55,12 +55,13 @@ unsigned int Ssak::getWiekDni() { return wiekDni; }
  */
 unsigned int Ssak::getWysokoscMm() { return wysokoscMm; }
 
-/**
- * @return std::string
- */
-std::string Ssak::getImie() { return imie; }
 
 /**
  * @return bool
  */
 bool Ssak::getJestPlciMeskiej() { return jestPlciMeskiej; }
+
+/**
+ * @return std::string
+ */
+std::string Ssak::getImie() { return imie; }
