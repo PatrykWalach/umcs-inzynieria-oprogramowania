@@ -1,18 +1,16 @@
-name: Merge
+name: C/C++ CI
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
-  build:
+  ubuntu-build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "15"
-      - name: Merge
-        run: npx codingame-cpp-merge
-      - uses: actions/upload-artifact@v2
-        with:
-          path: merged
+    - name: Checkout
+      uses: actions/checkout@v2.0.0
+    - name: Build project
+      uses: nicledomaS/cmake_build_action@v1.3
+      with:
+        submodule_update: ON
+        run_tests: ON
+        unit_test_build: -Dtest=ON

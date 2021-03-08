@@ -1,7 +1,8 @@
 
 
-#include "Czlowiek.h"
-#include "Jamnik.h"
+#include "./Model/Czlowiek.h"
+#include "./Model/Jamnik.h"
+#include "./Model/Pies.h"
 
 int main() {
   Jamnik foo("Foo", true, 320, Pies::DlugoscSiersci_krotka, 9000,
@@ -10,7 +11,8 @@ int main() {
              Jamnik::Wielkosc_standardowa, 365 * 2);
 
   auto fooBar = foo.rozmnoz(&bar, "FooBar");
-  fooBar->warcz();
+  fooBar->mow();
+  fooBar->rusz();
 
   Czlowiek artur("Artur", true, 80000, 1800, 365 * 24);
 
@@ -18,9 +20,12 @@ int main() {
                          Pies::TypUszu_stojace, Pies::DlugoscSiersci_krotka,
                          35000, 630, 365 * 2);
 
+
   artur.setPies(&owczarekNiemiecki);
 
   artur.prowadzSwojegoPsaNaSpacer();
-
   artur.getPies()->aportuj();
+  owczarekNiemiecki.rusz();
+  artur.rusz();
+  artur.mow();
 }
