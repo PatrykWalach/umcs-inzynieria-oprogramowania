@@ -5,7 +5,7 @@
 #include "Czlowiek.h"
 
 #include <iostream>
-#include <stdexcept>
+
 
 #include "util.h"
 

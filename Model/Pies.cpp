@@ -5,7 +5,7 @@
 #include "Pies.h"
 
 #include <iostream>
-#include <stdexcept>
+
 
 #include "Czlowiek.h"
 #include "util.h"

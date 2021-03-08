@@ -1,8 +1,5 @@
-#include <chrono>
+
 #include <cstdlib>
-#include <ctime>
-#include <iostream>
-#include <thread>
 #include <vector>
 
 int random(int min, int max) { return min + std::rand() % (max - min + 1); }
