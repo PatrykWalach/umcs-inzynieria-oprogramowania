@@ -66,6 +66,6 @@ bool Ssak::getJestPlciMeskiej() { return jestPlciMeskiej; }
  */
 std::string Ssak::getImie() { return imie; }
 
-void Ssak::mow() { std::cout << getImie() << " mowi" << std::endl; }
+void Ssak::mow() { std::cout << getImie() << ": \"...\"" << std::endl; }
 
 void Ssak::rusz() { std::cout << getImie() << " rusza sie" << std::endl; }
