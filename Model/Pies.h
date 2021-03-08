@@ -6,7 +6,7 @@
 #define _PIES_H
 
 #include "Ssak.h"
-#include "Czlowiek.h"
+class Czlowiek;
 
 class Pies : public Ssak {
  public:
