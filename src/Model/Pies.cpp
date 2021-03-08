@@ -6,9 +6,10 @@
 
 #include <iostream>
 
-
-#include "Czlowiek.h"
 #include "../util.h"
+
+class Czlowiek;
+
 /**
  * Pies implementation
  */
@@ -102,5 +103,5 @@ void Pies::podajLape(Czlowiek czlowiek) {
 
 void Pies::aportuj() { std::cout << getImie() << " aportuje" << std::endl; }
 void Pies::rusz() {
-    std::cout << getImie() << " podbiega energicznie" << std::endl;
+  std::cout << getImie() << " podbiega energicznie" << std::endl;
 }
