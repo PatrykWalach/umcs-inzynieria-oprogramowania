@@ -53,7 +53,7 @@ class Pies : public Ssak {
    */
   Pies* rozmnoz(Pies* pies, std::string imie);
 
-  void warcz();
+void mow();
 
   KsztaltGlowy getKsztaltGlowy();
 
@@ -68,6 +68,7 @@ void podajLape(Czlowiek czlowiek);
 
   void aportuj();
 
+void rusz();
  private:
   KsztaltGlowy ksztaltGlowy;
   TypUszu typUszu;

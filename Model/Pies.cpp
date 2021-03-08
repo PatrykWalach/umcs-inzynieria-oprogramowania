@@ -74,9 +74,9 @@ Pies* Pies::rozmnoz(Pies* pies, std::string imie) {
   return nowyPies;
 }
 
-void Pies::warcz() {
-  std::cout << getImie() << ": \"" << (random(0, 1) ? "RROWFF!!" : "WOOF!!")
-            << "\"" << std::endl;
+void Pies::mow() {
+  std::cout << getImie() << ": \"" << random({"RROWFF!!", "WOOF!!"}) << "\""
+            << std::endl;
 }
 /**
  * @return KsztaltGlowy
@@ -101,3 +101,6 @@ void Pies::podajLape(Czlowiek czlowiek) {
 }
 
 void Pies::aportuj() { std::cout << getImie() << " aportuje" << std::endl; }
+void Pies::rusz() {
+    std::cout << getImie() << " podbiega energicznie" << std::endl;
+}
