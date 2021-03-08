@@ -36,6 +36,9 @@ void setPies(Pies* value);
  * @param imie
  */
 Czlowiek* rozmnoz(Czlowiek* czlowiek, std::string imie);
+void mow();
+    
+void rusz();
 private: 
     Pies* pies;
     

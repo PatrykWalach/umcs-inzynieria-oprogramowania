@@ -64,3 +64,14 @@ void Czlowiek::prowadzPsaNaSpacer(Pies pies) {
   std::cout << getImie() << " wyprowadza " << pies.getImie() << " na spacer"
             << std::endl;
 }
+void Czlowiek::mow() {
+  std::cout << getImie() << ": \""
+            << random<std::string>(
+                   {"Ale ładna dzisiaj pogoda", "Cześć, jestem" + getImie()})
+            << "\"" << std::endl;
+}
+
+void Czlowiek::rusz() {
+  std::cout << getImie() << " robi kilka kroków "
+            << random({"w lewo", "do przodu", "w bok", "do tyłu"}) << std::endl;
+}
