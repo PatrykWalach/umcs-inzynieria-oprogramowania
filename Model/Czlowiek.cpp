@@ -7,7 +7,7 @@
 #include <iostream>
 
 
-#include "util.h"
+#include "../util.h"
 
 /**
  * Czlowiek implementation

@@ -1,8 +1,8 @@
 
 
-#include "Czlowiek.h"
-#include "Jamnik.h"
-#include "Pies.h"
+#include "Model/Czlowiek.h"
+#include "Model/Jamnik.h"
+#include "Model/Pies.h"
 
 int main() {
   Jamnik foo("Foo", true, 320, Pies::DlugoscSiersci_krotka, 9000,

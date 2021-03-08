@@ -7,14 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: "15"
-    - name: Merge
-      run: npx codingame-cpp-merge -o merged.cpp
-    - uses: actions/upload-artifact@v2
-      with:
-        path: merged
     - name: Build project
       uses: nicledomaS/cmake_build_action@v1.3
       with:
