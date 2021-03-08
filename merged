@@ -1,577 +1,3 @@
-/*-- File: main.cpp start --*/
-
-
-/*-- #include "Model\Czlowiek.h" start --*/
-/**
- * Project Untitled
- */
-
-
-#ifndef _CZLOWIEK_H
-#define _CZLOWIEK_H
-
-/*-- #include "Model\Ssak.h" start --*/
-/**
- * Project Untitled
- */
-
-#ifndef _SSAK_H
-#define _SSAK_H
-#include <string>
-
-class Ssak {
- public:
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param masaG
-   * @param wysokoscMm
-   * @param wiekDni
-   */
-  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
-       unsigned int wysokoscMm, unsigned int wiekDni);
-
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param masaG
-   * @param wysokoscMm
-   */
-  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
-       unsigned int wysokoscMm);
-
-  unsigned int getMasaG();
-
-  unsigned int getWiekDni();
-
-  unsigned int getWysokoscMm();
-
-  bool getJestPlciMeskiej();
-
-  std::string getImie();
-
-  virtual void mow() = 0;
-
-  virtual void rusz() = 0;
- private:
-  std::string imie;
-  bool jestPlciMeskiej;
-  unsigned int masaG;
-  unsigned int wysokoscMm;
-  unsigned int wiekDni = 0;
-};
-
-#endif  //_SSAK_H
-/*-- #include "Model\Pies.h" start --*/
-/**
- * Project Untitled
- */
-
-#ifndef _PIES_H
-#define _PIES_H
-
-/*-- #include "Model\Ssak.h" start --*/
-/**
- * Project Untitled
- */
-
-#ifndef _SSAK_H
-#define _SSAK_H
-#include <string>
-
-class Ssak {
- public:
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param masaG
-   * @param wysokoscMm
-   * @param wiekDni
-   */
-  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
-       unsigned int wysokoscMm, unsigned int wiekDni);
-
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param masaG
-   * @param wysokoscMm
-   */
-  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
-       unsigned int wysokoscMm);
-
-  unsigned int getMasaG();
-
-  unsigned int getWiekDni();
-
-  unsigned int getWysokoscMm();
-
-  bool getJestPlciMeskiej();
-
-  std::string getImie();
-
-  virtual void mow() = 0;
-
-  virtual void rusz() = 0;
- private:
-  std::string imie;
-  bool jestPlciMeskiej;
-  unsigned int masaG;
-  unsigned int wysokoscMm;
-  unsigned int wiekDni = 0;
-};
-
-#endif  //_SSAK_H
-class Czlowiek;
-
-class Pies : public Ssak {
- public:
-  enum DlugoscSiersci {
-    DlugoscSiersci_dluga,
-    DlugoscSiersci_krotka,
-    DlugoscSiersci_szorstka
-  };
-  enum TypUszu { TypUszu_dlugie, TypUszu_krotkie, TypUszu_stojace };
-  enum KsztaltGlowy {
-    KsztaltGlowy_okragly,
-    KsztaltGlowy_dlugi,
-    KsztaltGlowy_kwadratowy
-  };
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param ksztaltGlowy
-   * @param typUszu
-   * @param dlugoscSiersci
-   * @param masaG
-   * @param wysokoscMm
-   * @param wiekDni
-   */
-  Pies(std::string imie, bool jestPlciMeskiej, KsztaltGlowy ksztaltGlowy,
-       TypUszu typUszu, DlugoscSiersci dlugoscSiersci, unsigned int masaG,
-       unsigned int wysokoscMm, unsigned int wiekDni);
-
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param ksztaltGlowy
-   * @param typUszu
-   * @param dlugoscSiersci
-   * @param masaG
-   * @param wysokoscMm
-   */
-  Pies(std::string imie, bool jestPlciMeskiej, KsztaltGlowy ksztaltGlowy,
-       TypUszu typUszu, DlugoscSiersci dlugoscSiersci, unsigned int masaG,
-       unsigned int wysokoscMm);
-
-  /**
-   * @param pies
-   * @param imie
-   */
-  Pies* rozmnoz(Pies* pies, std::string imie);
-
-void mow();
-
-  KsztaltGlowy getKsztaltGlowy();
-
-  TypUszu getTypUszu();
-
-  DlugoscSiersci getDlugoscSiersci();
-
-/**
- * @param czlowiek
- */
-void podajLape(Czlowiek czlowiek);
-
-  void aportuj();
-
-void rusz();
- private:
-  KsztaltGlowy ksztaltGlowy;
-  TypUszu typUszu;
-  DlugoscSiersci dlugoscSiersci;
-};
-
-#endif  //_PIES_H
-
-
-class Czlowiek: public Ssak {
-public: 
-    
-/**
- * @param imie
- * @param jestPlciMeskiej
- * @param masaG
- * @param wysokoscMm
- * @param wiekDni
- */
-  Czlowiek(std::string imie, bool jestPlciMeskiej, unsigned int masaG, unsigned int wysokoscMm, unsigned int wiekDni);
-    
-void prowadzSwojegoPsaNaSpacer();
-    
-Pies* getPies();
-    
-/**
- * @param value
- */
-void setPies(Pies* value);
-    
-/**
- * @param czlowiek
- * @param imie
- */
-Czlowiek* rozmnoz(Czlowiek* czlowiek, std::string imie);
-void mow();
-    
-void rusz();
-private: 
-    Pies* pies;
-    
-/**
- * @param pies
- */
-void prowadzPsaNaSpacer(Pies pies);
-};
-
-#endif //_CZLOWIEK_H
-/*-- #include "Model\Jamnik.h" start --*/
-/**
- * Project Untitled
- */
-
-
-#ifndef _JAMNIK_H
-#define _JAMNIK_H
-
-/*-- #include "Model\Pies.h" start --*/
-/**
- * Project Untitled
- */
-
-#ifndef _PIES_H
-#define _PIES_H
-
-/*-- #include "Model\Ssak.h" start --*/
-/**
- * Project Untitled
- */
-
-#ifndef _SSAK_H
-#define _SSAK_H
-#include <string>
-
-class Ssak {
- public:
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param masaG
-   * @param wysokoscMm
-   * @param wiekDni
-   */
-  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
-       unsigned int wysokoscMm, unsigned int wiekDni);
-
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param masaG
-   * @param wysokoscMm
-   */
-  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
-       unsigned int wysokoscMm);
-
-  unsigned int getMasaG();
-
-  unsigned int getWiekDni();
-
-  unsigned int getWysokoscMm();
-
-  bool getJestPlciMeskiej();
-
-  std::string getImie();
-
-  virtual void mow() = 0;
-
-  virtual void rusz() = 0;
- private:
-  std::string imie;
-  bool jestPlciMeskiej;
-  unsigned int masaG;
-  unsigned int wysokoscMm;
-  unsigned int wiekDni = 0;
-};
-
-#endif  //_SSAK_H
-class Czlowiek;
-
-class Pies : public Ssak {
- public:
-  enum DlugoscSiersci {
-    DlugoscSiersci_dluga,
-    DlugoscSiersci_krotka,
-    DlugoscSiersci_szorstka
-  };
-  enum TypUszu { TypUszu_dlugie, TypUszu_krotkie, TypUszu_stojace };
-  enum KsztaltGlowy {
-    KsztaltGlowy_okragly,
-    KsztaltGlowy_dlugi,
-    KsztaltGlowy_kwadratowy
-  };
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param ksztaltGlowy
-   * @param typUszu
-   * @param dlugoscSiersci
-   * @param masaG
-   * @param wysokoscMm
-   * @param wiekDni
-   */
-  Pies(std::string imie, bool jestPlciMeskiej, KsztaltGlowy ksztaltGlowy,
-       TypUszu typUszu, DlugoscSiersci dlugoscSiersci, unsigned int masaG,
-       unsigned int wysokoscMm, unsigned int wiekDni);
-
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param ksztaltGlowy
-   * @param typUszu
-   * @param dlugoscSiersci
-   * @param masaG
-   * @param wysokoscMm
-   */
-  Pies(std::string imie, bool jestPlciMeskiej, KsztaltGlowy ksztaltGlowy,
-       TypUszu typUszu, DlugoscSiersci dlugoscSiersci, unsigned int masaG,
-       unsigned int wysokoscMm);
-
-  /**
-   * @param pies
-   * @param imie
-   */
-  Pies* rozmnoz(Pies* pies, std::string imie);
-
-void mow();
-
-  KsztaltGlowy getKsztaltGlowy();
-
-  TypUszu getTypUszu();
-
-  DlugoscSiersci getDlugoscSiersci();
-
-/**
- * @param czlowiek
- */
-void podajLape(Czlowiek czlowiek);
-
-  void aportuj();
-
-void rusz();
- private:
-  KsztaltGlowy ksztaltGlowy;
-  TypUszu typUszu;
-  DlugoscSiersci dlugoscSiersci;
-};
-
-#endif  //_PIES_H
-
-
-class Jamnik: public Pies {
-public: 
-      enum Wielkosc { Wielkosc_krolicza, Wielkosc_miniaturowa, Wielkosc_standardowa };
-/**
- * @param imie
- * @param jestPlciMeskiej
- * @param wysokoscMm
- * @param dlugoscSiersci
- * @param masaG
- * @param wielkosc
- * @param wiekDni
- */
-  Jamnik(std::string imie, bool jestPlciMeskiej, unsigned int wysokoscMm, DlugoscSiersci dlugoscSiersci, unsigned int masaG, Wielkosc wielkosc, unsigned int wiekDni);
-    
-/**
- * @param imie
- * @param jestPlciMeskiej
- * @param dlugoscSiersci
- * @param wielkosc
- * @param masaG
- * @param wysokoscMm
- */
-  Jamnik(std::string imie, bool jestPlciMeskiej, DlugoscSiersci dlugoscSiersci, Wielkosc wielkosc, unsigned int masaG, unsigned int wysokoscMm);
-    
-Wielkosc getWielkosc();
-    
-/**
- * @param jamnik
- * @param imie
- */
-Jamnik* rozmnoz(Jamnik* jamnik, std::string imie);
-
-private: 
-    Wielkosc wielkosc;
-};
-
-#endif //_JAMNIK_H
-/*-- #include "Model\Pies.h" start --*/
-/**
- * Project Untitled
- */
-
-#ifndef _PIES_H
-#define _PIES_H
-
-/*-- #include "Model\Ssak.h" start --*/
-/**
- * Project Untitled
- */
-
-#ifndef _SSAK_H
-#define _SSAK_H
-#include <string>
-
-class Ssak {
- public:
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param masaG
-   * @param wysokoscMm
-   * @param wiekDni
-   */
-  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
-       unsigned int wysokoscMm, unsigned int wiekDni);
-
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param masaG
-   * @param wysokoscMm
-   */
-  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
-       unsigned int wysokoscMm);
-
-  unsigned int getMasaG();
-
-  unsigned int getWiekDni();
-
-  unsigned int getWysokoscMm();
-
-  bool getJestPlciMeskiej();
-
-  std::string getImie();
-
-  virtual void mow() = 0;
-
-  virtual void rusz() = 0;
- private:
-  std::string imie;
-  bool jestPlciMeskiej;
-  unsigned int masaG;
-  unsigned int wysokoscMm;
-  unsigned int wiekDni = 0;
-};
-
-#endif  //_SSAK_H
-class Czlowiek;
-
-class Pies : public Ssak {
- public:
-  enum DlugoscSiersci {
-    DlugoscSiersci_dluga,
-    DlugoscSiersci_krotka,
-    DlugoscSiersci_szorstka
-  };
-  enum TypUszu { TypUszu_dlugie, TypUszu_krotkie, TypUszu_stojace };
-  enum KsztaltGlowy {
-    KsztaltGlowy_okragly,
-    KsztaltGlowy_dlugi,
-    KsztaltGlowy_kwadratowy
-  };
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param ksztaltGlowy
-   * @param typUszu
-   * @param dlugoscSiersci
-   * @param masaG
-   * @param wysokoscMm
-   * @param wiekDni
-   */
-  Pies(std::string imie, bool jestPlciMeskiej, KsztaltGlowy ksztaltGlowy,
-       TypUszu typUszu, DlugoscSiersci dlugoscSiersci, unsigned int masaG,
-       unsigned int wysokoscMm, unsigned int wiekDni);
-
-  /**
-   * @param imie
-   * @param jestPlciMeskiej
-   * @param ksztaltGlowy
-   * @param typUszu
-   * @param dlugoscSiersci
-   * @param masaG
-   * @param wysokoscMm
-   */
-  Pies(std::string imie, bool jestPlciMeskiej, KsztaltGlowy ksztaltGlowy,
-       TypUszu typUszu, DlugoscSiersci dlugoscSiersci, unsigned int masaG,
-       unsigned int wysokoscMm);
-
-  /**
-   * @param pies
-   * @param imie
-   */
-  Pies* rozmnoz(Pies* pies, std::string imie);
-
-void mow();
-
-  KsztaltGlowy getKsztaltGlowy();
-
-  TypUszu getTypUszu();
-
-  DlugoscSiersci getDlugoscSiersci();
-
-/**
- * @param czlowiek
- */
-void podajLape(Czlowiek czlowiek);
-
-  void aportuj();
-
-void rusz();
- private:
-  KsztaltGlowy ksztaltGlowy;
-  TypUszu typUszu;
-  DlugoscSiersci dlugoscSiersci;
-};
-
-#endif  //_PIES_H
-
-int main() {
-  Jamnik foo("Foo", true, 320, Pies::DlugoscSiersci_krotka, 9000,
-             Jamnik::Wielkosc_miniaturowa, 365 * 3);
-  Jamnik bar("Bar", false, 280, Pies::DlugoscSiersci_szorstka, 7500,
-             Jamnik::Wielkosc_standardowa, 365 * 2);
-
-  auto fooBar = foo.rozmnoz(&bar, "FooBar");
-  fooBar->mow();
-  fooBar->rusz();
-
-  Czlowiek artur("Artur", true, 80000, 1800, 365 * 24);
-
-  Pies owczarekNiemiecki("John", true, Pies::KsztaltGlowy_dlugi,
-                         Pies::TypUszu_stojace, Pies::DlugoscSiersci_krotka,
-                         35000, 630, 365 * 2);
-
-
-  artur.setPies(&owczarekNiemiecki);
-
-  artur.prowadzSwojegoPsaNaSpacer();
-  artur.getPies()->aportuj();
-  owczarekNiemiecki.rusz();
-  artur.rusz();
-  artur.mow();
-}
-
-/*-- File: main.cpp end --*/
 /*-- File: Model\Czlowiek.cpp start --*/
 /**
  * Project Untitled
@@ -1569,6 +995,580 @@ private:
 };
 
 #endif //_JAMNIK_H
+/*-- File: Model\main.cpp start --*/
+
+
+/*-- #include "Model\Czlowiek.h" start --*/
+/**
+ * Project Untitled
+ */
+
+
+#ifndef _CZLOWIEK_H
+#define _CZLOWIEK_H
+
+/*-- #include "Model\Ssak.h" start --*/
+/**
+ * Project Untitled
+ */
+
+#ifndef _SSAK_H
+#define _SSAK_H
+#include <string>
+
+class Ssak {
+ public:
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param masaG
+   * @param wysokoscMm
+   * @param wiekDni
+   */
+  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
+       unsigned int wysokoscMm, unsigned int wiekDni);
+
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param masaG
+   * @param wysokoscMm
+   */
+  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
+       unsigned int wysokoscMm);
+
+  unsigned int getMasaG();
+
+  unsigned int getWiekDni();
+
+  unsigned int getWysokoscMm();
+
+  bool getJestPlciMeskiej();
+
+  std::string getImie();
+
+  virtual void mow() = 0;
+
+  virtual void rusz() = 0;
+ private:
+  std::string imie;
+  bool jestPlciMeskiej;
+  unsigned int masaG;
+  unsigned int wysokoscMm;
+  unsigned int wiekDni = 0;
+};
+
+#endif  //_SSAK_H
+/*-- #include "Model\Pies.h" start --*/
+/**
+ * Project Untitled
+ */
+
+#ifndef _PIES_H
+#define _PIES_H
+
+/*-- #include "Model\Ssak.h" start --*/
+/**
+ * Project Untitled
+ */
+
+#ifndef _SSAK_H
+#define _SSAK_H
+#include <string>
+
+class Ssak {
+ public:
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param masaG
+   * @param wysokoscMm
+   * @param wiekDni
+   */
+  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
+       unsigned int wysokoscMm, unsigned int wiekDni);
+
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param masaG
+   * @param wysokoscMm
+   */
+  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
+       unsigned int wysokoscMm);
+
+  unsigned int getMasaG();
+
+  unsigned int getWiekDni();
+
+  unsigned int getWysokoscMm();
+
+  bool getJestPlciMeskiej();
+
+  std::string getImie();
+
+  virtual void mow() = 0;
+
+  virtual void rusz() = 0;
+ private:
+  std::string imie;
+  bool jestPlciMeskiej;
+  unsigned int masaG;
+  unsigned int wysokoscMm;
+  unsigned int wiekDni = 0;
+};
+
+#endif  //_SSAK_H
+class Czlowiek;
+
+class Pies : public Ssak {
+ public:
+  enum DlugoscSiersci {
+    DlugoscSiersci_dluga,
+    DlugoscSiersci_krotka,
+    DlugoscSiersci_szorstka
+  };
+  enum TypUszu { TypUszu_dlugie, TypUszu_krotkie, TypUszu_stojace };
+  enum KsztaltGlowy {
+    KsztaltGlowy_okragly,
+    KsztaltGlowy_dlugi,
+    KsztaltGlowy_kwadratowy
+  };
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param ksztaltGlowy
+   * @param typUszu
+   * @param dlugoscSiersci
+   * @param masaG
+   * @param wysokoscMm
+   * @param wiekDni
+   */
+  Pies(std::string imie, bool jestPlciMeskiej, KsztaltGlowy ksztaltGlowy,
+       TypUszu typUszu, DlugoscSiersci dlugoscSiersci, unsigned int masaG,
+       unsigned int wysokoscMm, unsigned int wiekDni);
+
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param ksztaltGlowy
+   * @param typUszu
+   * @param dlugoscSiersci
+   * @param masaG
+   * @param wysokoscMm
+   */
+  Pies(std::string imie, bool jestPlciMeskiej, KsztaltGlowy ksztaltGlowy,
+       TypUszu typUszu, DlugoscSiersci dlugoscSiersci, unsigned int masaG,
+       unsigned int wysokoscMm);
+
+  /**
+   * @param pies
+   * @param imie
+   */
+  Pies* rozmnoz(Pies* pies, std::string imie);
+
+void mow();
+
+  KsztaltGlowy getKsztaltGlowy();
+
+  TypUszu getTypUszu();
+
+  DlugoscSiersci getDlugoscSiersci();
+
+/**
+ * @param czlowiek
+ */
+void podajLape(Czlowiek czlowiek);
+
+  void aportuj();
+
+void rusz();
+ private:
+  KsztaltGlowy ksztaltGlowy;
+  TypUszu typUszu;
+  DlugoscSiersci dlugoscSiersci;
+};
+
+#endif  //_PIES_H
+
+
+class Czlowiek: public Ssak {
+public: 
+    
+/**
+ * @param imie
+ * @param jestPlciMeskiej
+ * @param masaG
+ * @param wysokoscMm
+ * @param wiekDni
+ */
+  Czlowiek(std::string imie, bool jestPlciMeskiej, unsigned int masaG, unsigned int wysokoscMm, unsigned int wiekDni);
+    
+void prowadzSwojegoPsaNaSpacer();
+    
+Pies* getPies();
+    
+/**
+ * @param value
+ */
+void setPies(Pies* value);
+    
+/**
+ * @param czlowiek
+ * @param imie
+ */
+Czlowiek* rozmnoz(Czlowiek* czlowiek, std::string imie);
+void mow();
+    
+void rusz();
+private: 
+    Pies* pies;
+    
+/**
+ * @param pies
+ */
+void prowadzPsaNaSpacer(Pies pies);
+};
+
+#endif //_CZLOWIEK_H
+/*-- #include "Model\Jamnik.h" start --*/
+/**
+ * Project Untitled
+ */
+
+
+#ifndef _JAMNIK_H
+#define _JAMNIK_H
+
+/*-- #include "Model\Pies.h" start --*/
+/**
+ * Project Untitled
+ */
+
+#ifndef _PIES_H
+#define _PIES_H
+
+/*-- #include "Model\Ssak.h" start --*/
+/**
+ * Project Untitled
+ */
+
+#ifndef _SSAK_H
+#define _SSAK_H
+#include <string>
+
+class Ssak {
+ public:
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param masaG
+   * @param wysokoscMm
+   * @param wiekDni
+   */
+  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
+       unsigned int wysokoscMm, unsigned int wiekDni);
+
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param masaG
+   * @param wysokoscMm
+   */
+  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
+       unsigned int wysokoscMm);
+
+  unsigned int getMasaG();
+
+  unsigned int getWiekDni();
+
+  unsigned int getWysokoscMm();
+
+  bool getJestPlciMeskiej();
+
+  std::string getImie();
+
+  virtual void mow() = 0;
+
+  virtual void rusz() = 0;
+ private:
+  std::string imie;
+  bool jestPlciMeskiej;
+  unsigned int masaG;
+  unsigned int wysokoscMm;
+  unsigned int wiekDni = 0;
+};
+
+#endif  //_SSAK_H
+class Czlowiek;
+
+class Pies : public Ssak {
+ public:
+  enum DlugoscSiersci {
+    DlugoscSiersci_dluga,
+    DlugoscSiersci_krotka,
+    DlugoscSiersci_szorstka
+  };
+  enum TypUszu { TypUszu_dlugie, TypUszu_krotkie, TypUszu_stojace };
+  enum KsztaltGlowy {
+    KsztaltGlowy_okragly,
+    KsztaltGlowy_dlugi,
+    KsztaltGlowy_kwadratowy
+  };
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param ksztaltGlowy
+   * @param typUszu
+   * @param dlugoscSiersci
+   * @param masaG
+   * @param wysokoscMm
+   * @param wiekDni
+   */
+  Pies(std::string imie, bool jestPlciMeskiej, KsztaltGlowy ksztaltGlowy,
+       TypUszu typUszu, DlugoscSiersci dlugoscSiersci, unsigned int masaG,
+       unsigned int wysokoscMm, unsigned int wiekDni);
+
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param ksztaltGlowy
+   * @param typUszu
+   * @param dlugoscSiersci
+   * @param masaG
+   * @param wysokoscMm
+   */
+  Pies(std::string imie, bool jestPlciMeskiej, KsztaltGlowy ksztaltGlowy,
+       TypUszu typUszu, DlugoscSiersci dlugoscSiersci, unsigned int masaG,
+       unsigned int wysokoscMm);
+
+  /**
+   * @param pies
+   * @param imie
+   */
+  Pies* rozmnoz(Pies* pies, std::string imie);
+
+void mow();
+
+  KsztaltGlowy getKsztaltGlowy();
+
+  TypUszu getTypUszu();
+
+  DlugoscSiersci getDlugoscSiersci();
+
+/**
+ * @param czlowiek
+ */
+void podajLape(Czlowiek czlowiek);
+
+  void aportuj();
+
+void rusz();
+ private:
+  KsztaltGlowy ksztaltGlowy;
+  TypUszu typUszu;
+  DlugoscSiersci dlugoscSiersci;
+};
+
+#endif  //_PIES_H
+
+
+class Jamnik: public Pies {
+public: 
+      enum Wielkosc { Wielkosc_krolicza, Wielkosc_miniaturowa, Wielkosc_standardowa };
+/**
+ * @param imie
+ * @param jestPlciMeskiej
+ * @param wysokoscMm
+ * @param dlugoscSiersci
+ * @param masaG
+ * @param wielkosc
+ * @param wiekDni
+ */
+  Jamnik(std::string imie, bool jestPlciMeskiej, unsigned int wysokoscMm, DlugoscSiersci dlugoscSiersci, unsigned int masaG, Wielkosc wielkosc, unsigned int wiekDni);
+    
+/**
+ * @param imie
+ * @param jestPlciMeskiej
+ * @param dlugoscSiersci
+ * @param wielkosc
+ * @param masaG
+ * @param wysokoscMm
+ */
+  Jamnik(std::string imie, bool jestPlciMeskiej, DlugoscSiersci dlugoscSiersci, Wielkosc wielkosc, unsigned int masaG, unsigned int wysokoscMm);
+    
+Wielkosc getWielkosc();
+    
+/**
+ * @param jamnik
+ * @param imie
+ */
+Jamnik* rozmnoz(Jamnik* jamnik, std::string imie);
+
+private: 
+    Wielkosc wielkosc;
+};
+
+#endif //_JAMNIK_H
+/*-- #include "Model\Pies.h" start --*/
+/**
+ * Project Untitled
+ */
+
+#ifndef _PIES_H
+#define _PIES_H
+
+/*-- #include "Model\Ssak.h" start --*/
+/**
+ * Project Untitled
+ */
+
+#ifndef _SSAK_H
+#define _SSAK_H
+#include <string>
+
+class Ssak {
+ public:
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param masaG
+   * @param wysokoscMm
+   * @param wiekDni
+   */
+  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
+       unsigned int wysokoscMm, unsigned int wiekDni);
+
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param masaG
+   * @param wysokoscMm
+   */
+  Ssak(std::string imie, bool jestPlciMeskiej, unsigned int masaG,
+       unsigned int wysokoscMm);
+
+  unsigned int getMasaG();
+
+  unsigned int getWiekDni();
+
+  unsigned int getWysokoscMm();
+
+  bool getJestPlciMeskiej();
+
+  std::string getImie();
+
+  virtual void mow() = 0;
+
+  virtual void rusz() = 0;
+ private:
+  std::string imie;
+  bool jestPlciMeskiej;
+  unsigned int masaG;
+  unsigned int wysokoscMm;
+  unsigned int wiekDni = 0;
+};
+
+#endif  //_SSAK_H
+class Czlowiek;
+
+class Pies : public Ssak {
+ public:
+  enum DlugoscSiersci {
+    DlugoscSiersci_dluga,
+    DlugoscSiersci_krotka,
+    DlugoscSiersci_szorstka
+  };
+  enum TypUszu { TypUszu_dlugie, TypUszu_krotkie, TypUszu_stojace };
+  enum KsztaltGlowy {
+    KsztaltGlowy_okragly,
+    KsztaltGlowy_dlugi,
+    KsztaltGlowy_kwadratowy
+  };
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param ksztaltGlowy
+   * @param typUszu
+   * @param dlugoscSiersci
+   * @param masaG
+   * @param wysokoscMm
+   * @param wiekDni
+   */
+  Pies(std::string imie, bool jestPlciMeskiej, KsztaltGlowy ksztaltGlowy,
+       TypUszu typUszu, DlugoscSiersci dlugoscSiersci, unsigned int masaG,
+       unsigned int wysokoscMm, unsigned int wiekDni);
+
+  /**
+   * @param imie
+   * @param jestPlciMeskiej
+   * @param ksztaltGlowy
+   * @param typUszu
+   * @param dlugoscSiersci
+   * @param masaG
+   * @param wysokoscMm
+   */
+  Pies(std::string imie, bool jestPlciMeskiej, KsztaltGlowy ksztaltGlowy,
+       TypUszu typUszu, DlugoscSiersci dlugoscSiersci, unsigned int masaG,
+       unsigned int wysokoscMm);
+
+  /**
+   * @param pies
+   * @param imie
+   */
+  Pies* rozmnoz(Pies* pies, std::string imie);
+
+void mow();
+
+  KsztaltGlowy getKsztaltGlowy();
+
+  TypUszu getTypUszu();
+
+  DlugoscSiersci getDlugoscSiersci();
+
+/**
+ * @param czlowiek
+ */
+void podajLape(Czlowiek czlowiek);
+
+  void aportuj();
+
+void rusz();
+ private:
+  KsztaltGlowy ksztaltGlowy;
+  TypUszu typUszu;
+  DlugoscSiersci dlugoscSiersci;
+};
+
+#endif  //_PIES_H
+
+int main() {
+  Jamnik foo("Foo", true, 320, Pies::DlugoscSiersci_krotka, 9000,
+             Jamnik::Wielkosc_miniaturowa, 365 * 3);
+  Jamnik bar("Bar", false, 280, Pies::DlugoscSiersci_szorstka, 7500,
+             Jamnik::Wielkosc_standardowa, 365 * 2);
+
+  auto fooBar = foo.rozmnoz(&bar, "FooBar");
+  fooBar->mow();
+  fooBar->rusz();
+
+  Czlowiek artur("Artur", true, 80000, 1800, 365 * 24);
+
+  Pies owczarekNiemiecki("John", true, Pies::KsztaltGlowy_dlugi,
+                         Pies::TypUszu_stojace, Pies::DlugoscSiersci_krotka,
+                         35000, 630, 365 * 2);
+
+
+  artur.setPies(&owczarekNiemiecki);
+
+  artur.prowadzSwojegoPsaNaSpacer();
+  artur.getPies()->aportuj();
+  owczarekNiemiecki.rusz();
+  artur.rusz();
+  artur.mow();
+}
+
+/*-- File: Model\main.cpp end --*/
 /*-- File: Model\Pies.cpp start --*/
 /**
  * Project Untitled
