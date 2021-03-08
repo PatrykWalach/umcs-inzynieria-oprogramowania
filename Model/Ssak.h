@@ -37,6 +37,9 @@ class Ssak {
 
   std::string getImie();
 
+  virtual void mow() = 0;
+
+  virtual void rusz() = 0;
  private:
   std::string imie;
   bool jestPlciMeskiej;

@@ -3,6 +3,7 @@
  */
 
 #include "Ssak.h"
+#include <iostream>
 
 /**
  * Ssak implementation
@@ -55,7 +56,6 @@ unsigned int Ssak::getWiekDni() { return wiekDni; }
  */
 unsigned int Ssak::getWysokoscMm() { return wysokoscMm; }
 
-
 /**
  * @return bool
  */
@@ -65,3 +65,7 @@ bool Ssak::getJestPlciMeskiej() { return jestPlciMeskiej; }
  * @return std::string
  */
 std::string Ssak::getImie() { return imie; }
+
+void Ssak::mow() { std::cout << getImie() << " mowi" << std::endl; }
+
+void Ssak::rusz() { std::cout << getImie() << " rusza sie" << std::endl; }
