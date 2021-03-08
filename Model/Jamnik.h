@@ -41,7 +41,7 @@ Wielkosc getWielkosc();
  */
 Jamnik* rozmnoz(Jamnik* jamnik, std::string imie);
 
-protected: 
+private: 
     Wielkosc wielkosc;
 };
 
