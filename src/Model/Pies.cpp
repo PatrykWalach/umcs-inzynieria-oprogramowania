@@ -70,7 +70,7 @@ Pies* Pies::rozmnoz(Pies* pies, std::string imie) {
                random({dlugoscSiersci, pies->dlugoscSiersci}),
                random(500, 1000), random(100, 50));
 
-  std::cout << "narodzil się nowy pies " << imie << std::endl;
+  std::cout << "Narodzil się nowy pies " << imie << "." << std::endl;
 
   return nowyPies;
 }
@@ -98,10 +98,15 @@ Pies::DlugoscSiersci Pies::getDlugoscSiersci() { return dlugoscSiersci; }
  * @param czlowiek
  */
 void Pies::podajLape(Czlowiek czlowiek) {
-  std::cout << getImie() << " podaje lape " << czlowiek.getImie() << std::endl;
+  std::cout << getImie() << " podaje lape " << czlowiek.getImie() << "."
+            << std::endl;
 }
 
-void Pies::aportuj() { std::cout << getImie() << " aportuje" << std::endl; }
+void Pies::aportuj() {
+  std::cout << getImie() << " aportuje"
+            << "." << std::endl;
+}
 void Pies::rusz() {
-  std::cout << getImie() << " podbiega energicznie" << std::endl;
+  std::cout << getImie() << " podbiega energicznie"
+            << "." << std::endl;
 }

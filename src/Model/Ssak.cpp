@@ -3,6 +3,7 @@
  */
 
 #include "Ssak.h"
+
 #include <iostream>
 
 /**

@@ -6,7 +6,6 @@
 
 #include <iostream>
 
-
 #include "../util.h"
 
 /**
@@ -69,7 +68,7 @@ Jamnik* Jamnik::rozmnoz(Jamnik* jamnik, std::string imie) {
       random({getDlugoscSiersci(), jamnik->getDlugoscSiersci()}),
       random({wielkosc, jamnik->wielkosc}), random(500, 1000), random(100, 50));
 
-  std::cout << "narodzil się nowy jamnik " << imie << std::endl;
+  std::cout << "Narodzil się nowy jamnik " << imie << "." << std::endl;
 
   return nowyJamnik;
 }

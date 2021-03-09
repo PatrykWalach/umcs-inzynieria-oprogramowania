@@ -6,7 +6,6 @@
 
 #include <iostream>
 
-
 #include "../util.h"
 
 /**
@@ -52,7 +51,7 @@ Czlowiek* Czlowiek::rozmnoz(Czlowiek* czlowiek, std::string imie) {
       imie, random({getJestPlciMeskiej(), czlowiek->getJestPlciMeskiej()}),
       random(2500, 3500), random(300, 500), 0);
 
-  std::cout << "narodzil się nowy czlowiek " << imie << std::endl;
+  std::cout << "Narodzil się nowy czlowiek " << imie << "." << std::endl;
 
   return nowyCzlowiek;
 }
@@ -62,7 +61,7 @@ Czlowiek* Czlowiek::rozmnoz(Czlowiek* czlowiek, std::string imie) {
  */
 void Czlowiek::prowadzPsaNaSpacer(Pies pies) {
   std::cout << getImie() << " wyprowadza " << pies.getImie() << " na spacer"
-            << std::endl;
+            << "." << std::endl;
 }
 void Czlowiek::mow() {
   std::cout << getImie() << ": \""
@@ -73,5 +72,6 @@ void Czlowiek::mow() {
 
 void Czlowiek::rusz() {
   std::cout << getImie() << " robi kilka kroków "
-            << random({"w lewo", "do przodu", "w bok", "do tyłu"}) << std::endl;
+            << random({"w lewo", "do przodu", "w bok", "do tyłu"}) << "."
+            << std::endl;
 }
