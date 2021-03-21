@@ -1,0 +1,2 @@
+Fabryka napojow coca-cola potrzebuje systemu pozawalajacego na przechowywanie informacji o aktualnie produkowanych napojach, ich objętość, składniki, oraz cenę.
+System pozwalać ma na dodawanie i usuwanie produkowanych napojów.
