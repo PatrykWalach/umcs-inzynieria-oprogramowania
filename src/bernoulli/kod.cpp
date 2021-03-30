@@ -15,9 +15,12 @@ class Factorial {
 class BinomialCoefficient {
  public:
   double operator()(int n, int k) {
-    Factorial factorial;
+    auto factorial = new Factorial();
 
-    return (double)factorial(n) / (double)(factorial(k) * factorial(n - k));
+    auto r = (double)(*factorial)(n) /
+             (double)((*factorial)(k) * (*factorial)(n - k));
+    delete factorial;
+    return r;
   }
 };
 
@@ -39,10 +42,15 @@ class Power {
 class BernoulliScheme {
  public:
   double operator()(int n, int k, double p) {
-    BinomialCoefficient bc;
-    Power pow;
+    auto bc = new BinomialCoefficient();
+    auto pow = new Power();
 
-    return bc(n, k) * pow(p, k) * pow(1 - p, n - k);
+    auto r = (*bc)(n, k) * (*pow)(p, k) * (*pow)(1 - p, n - k);
+
+    delete bc;
+    delete pow;
+
+    return r;
   }
 };
 
