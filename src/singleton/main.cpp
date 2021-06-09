@@ -11,6 +11,10 @@ class Singleton {
     }
     return instance;
   }
+
+  Singleton(Singleton& other) = delete;
+  void operator=(const Singleton&) = delete;
+
   ~Singleton() { instance = nullptr; }
 };
 
