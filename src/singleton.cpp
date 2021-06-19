@@ -20,4 +20,4 @@ class Singleton {
 
 Singleton* Singleton::instance = nullptr;
 
-int main() {}
+int main() { Singleton* s = Singleton::getInstance(); }
